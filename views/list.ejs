@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #first_task {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        #h11 {
+            margin: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+        }
+        
+        ul h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        form {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="first_task">
+        <h1 id="h11">My Day</h1>
+        <h3><%= kindofday %></h3>
+    </div>
+    <div>
+        <ul>
+            <h2>Tasks</h2>
+            <% for (let i = 0; i < newListItems.length; i++) { %>
+                <li>
+                    <input type="checkbox">
+                    <label><%= newListItems[i] %></label>
+                </li>
+            <% } %>
+            <form action="/" method="post">
+                <input type="text" name="newItem" id="textfield" placeholder="Add your task here">
+                <button type="submit">Add</button>
+            </form>
+        </ul>
+    </div>
+</body>
+</html>
